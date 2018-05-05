@@ -4,10 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NogometneIkone.DAL;
+using NogometneIkone.DAL.Repository;
+using NogometneIkone.Model;
 
-namespace NogometneIkoneApi
+namespace NogometneIkone.Web
 {
     public class Startup
     {
@@ -22,6 +27,16 @@ namespace NogometneIkoneApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<QuizRepository>();
+            services.AddScoped<QuestionRepository>();
+            services.AddScoped<AnswerRepository>();
+            services.AddDbContext<NIManagerDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:localConn"]));
+            services.AddMvc().AddJsonOptions(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<NIManagerDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +60,8 @@ namespace NogometneIkoneApi
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace NogometneIkoneApi.Models
+namespace NogometneIkone.Web.Models
 {
     public class ErrorViewModel
     {

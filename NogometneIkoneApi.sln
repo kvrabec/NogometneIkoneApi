@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NogometneIkoneApi", "NogometneIkoneApi\NogometneIkoneApi.csproj", "{A7C5D243-460F-47E5-BA8C-E95F5A15685A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NogometneIkone.Web", "NogometneIkoneApi\NogometneIkone.Web.csproj", "{A7C5D243-460F-47E5-BA8C-E95F5A15685A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NogometneIkone.Model", "NogometneIkone.Model\NogometneIkone.Model.csproj", "{820A096A-A094-408F-869B-9D8A1C2908B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NogometneIkone.Model", "NogometneIkone.Model\NogometneIkone.Model.csproj", "{820A096A-A094-408F-869B-9D8A1C2908B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NogometneIkone.DAL", "NogometneIkone.DAL\NogometneIkone.DAL.csproj", "{B371C4BD-E203-45CC-8E33-EEEBC862E987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{820A096A-A094-408F-869B-9D8A1C2908B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{820A096A-A094-408F-869B-9D8A1C2908B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{820A096A-A094-408F-869B-9D8A1C2908B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B371C4BD-E203-45CC-8E33-EEEBC862E987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B371C4BD-E203-45CC-8E33-EEEBC862E987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B371C4BD-E203-45CC-8E33-EEEBC862E987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B371C4BD-E203-45CC-8E33-EEEBC862E987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
