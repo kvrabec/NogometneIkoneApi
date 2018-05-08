@@ -15,8 +15,14 @@ namespace NogometneIkone.DAL.Repository
         public List<Question> GetList()
         {
             return this.DbContext.Questions
-                    .Include(q => q.Answers)
                     .ToList();
+        }
+
+        public List<Question> GetListWithAnswers()
+        {
+            return this.DbContext.Questions
+                .Include(q => q.Answers)
+                .ToList();
         }
     }
 }

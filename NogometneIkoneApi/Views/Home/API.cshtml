@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "API";
+}
+
+<h2>API</h2>
+
+<h3>Quiz API</h3>
+<ul>
+    <li>
+        @Html.ActionLink("Quizzes only", $"Get", $"Quiz")
+    </li>
+    <li>
+        @Html.ActionLink("Quizz by ID", $"Get", $"Quiz", new {id = 1})
+    </li>
+    <li>
+        @Html.ActionLink("Quiz with questions", $"GetQuizesWithQuestions", $"Quiz")
+    </li>
+    <li>
+        @Html.ActionLink("Quiz with questions and answers", $"GetQuizesWithQuestionsAndAnswers", $"Quiz")
+    </li>
+</ul>
+
+<h3>Questions API</h3>
+<ul>
+    <li>
+        @Html.ActionLink("Questions only", $"Get", $"Question")
+    </li>
+    <li>
+        @Html.ActionLink("Question by ID", $"Get", $"Question", new {id = 1})
+    </li>
+    <li>
+        @Html.ActionLink("Questions with answers", $"GetQuestionsWithAnswers", $"Question")
+    </li>
+</ul>
+
+<h3>Answers API</h3>
+<ul>
+    <li>
+        @Html.ActionLink("Answers", $"Get", $"Answer")
+    </li>
+    <li>
+        @Html.ActionLink("Answer by ID", $"Get", $"Answer", new {id = 1})
+    </li>
+</ul>
