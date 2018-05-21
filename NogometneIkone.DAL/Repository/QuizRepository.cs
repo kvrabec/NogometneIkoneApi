@@ -1,36 +1,44 @@
-﻿using NogometneIkone.Model;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using NogometneIkone.DAL.Repository.IRepository;
+using NogometneIkone.Model;
 
 namespace NogometneIkone.DAL.Repository
 {
     public class QuizRepository : RepositoryBase<Quiz>, IRepositoryBase<Quiz>
     {
-        public QuizRepository(NIManagerDbContext context) : base(context) { }
-
-        public List<Quiz> GetList ()
+        public QuizRepository(NIManagerDbContext context) : base(context)
         {
-            return this.DbContext.Quizzes
+        }
+
+        public IEnumerable<Quiz> GetList()
+        {
+            return DbContext.Quizzes
                 .ToList();
         }
 
-        public List<Quiz> GetListWithQuestions()
+        public IEnumerable<Quiz> GetListWithQuestions()
         {
-            return this.DbContext.Quizzes
+            return DbContext.Quizzes
                 .Include(quiz => quiz.Questions)
                 .ToList();
         }
 
-        public List<Quiz> GetListWithQuestionsAndAnswers()
+        public IEnumerable<Quiz> GetListWithQuestionsAndAnswers()
         {
-            return this.DbContext.Quizzes
+            return DbContext.Quizzes
                 .Include(quiz => quiz.Questions)
                 .ThenInclude(question => question.Answers)
                 .ToList();
+        }
+
+        public Quiz FindWithQuestionsAndAnswers(int id)
+        {
+            return DbContext.Quizzes
+                .Include(quiz => quiz.Questions)
+                .ThenInclude(question => question.Answers)
+                .FirstOrDefault(quiz => quiz.ID == id);
         }
     }
 }

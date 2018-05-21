@@ -138,8 +138,6 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
                     b.Property<bool>("IsCorretAnswer");
 
                     b.Property<int>("QuestionID");
@@ -217,8 +215,6 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
                     b.Property<string>("LogoUrl");
 
                     b.Property<string>("Name");
@@ -235,9 +231,7 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
-                    b.Property<int?>("Difficulty");
+                    b.Property<int>("Difficulty");
 
                     b.Property<string>("Fact");
 
@@ -266,8 +260,6 @@ namespace NogometneIkone.DAL.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateCreated");
-
-                    b.Property<DateTime?>("DateModified");
 
                     b.Property<int>("Difficulty");
 

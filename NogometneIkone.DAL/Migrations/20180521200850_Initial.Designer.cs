@@ -12,7 +12,7 @@ using System;
 namespace NogometneIkone.DAL.Migrations
 {
     [DbContext(typeof(NIManagerDbContext))]
-    [Migration("20180503173219_Initial")]
+    [Migration("20180521200850_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -139,8 +139,6 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
                     b.Property<bool>("IsCorretAnswer");
 
                     b.Property<int>("QuestionID");
@@ -218,8 +216,6 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
                     b.Property<string>("LogoUrl");
 
                     b.Property<string>("Name");
@@ -236,9 +232,7 @@ namespace NogometneIkone.DAL.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime?>("DateModified");
-
-                    b.Property<int?>("Difficulty");
+                    b.Property<int>("Difficulty");
 
                     b.Property<string>("Fact");
 
@@ -267,8 +261,6 @@ namespace NogometneIkone.DAL.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateCreated");
-
-                    b.Property<DateTime?>("DateModified");
 
                     b.Property<int>("Difficulty");
 

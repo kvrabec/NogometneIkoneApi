@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace NogometneIkone.DAL.Repository.IRepository
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {
-        List<TEntity> GetList();
+        IEnumerable<TEntity> GetList();
         TEntity Find(int id);
         void Save();
         void Add(TEntity model, bool autoSave = false);

@@ -12,17 +12,18 @@ namespace NogometneIkone.DAL.Repository
     {
         public QuestionRepository(NIManagerDbContext context) : base(context) { }
 
-        public List<Question> GetList()
+        public IEnumerable<Question> GetList()
         {
-            return this.DbContext.Questions
-                    .ToList();
+            return DbContext.Questions
+.ToList();
         }
 
-        public List<Question> GetListWithAnswers()
-        {
-            return this.DbContext.Questions
+        public IEnumerable<Question> ListWithAnswers => DbContext.Questions
                 .Include(q => q.Answers)
                 .ToList();
-        }
+
+        public IEnumerable<Question> FindWithAnswers(int id) => DbContext.Questions
+                .Include(q => q.Answers)
+                .ToList();
     }
 }

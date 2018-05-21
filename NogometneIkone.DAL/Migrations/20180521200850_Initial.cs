@@ -30,7 +30,6 @@ namespace NogometneIkone.DAL.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModified = table.Column<DateTime>(nullable: true),
                     LogoUrl = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -46,7 +45,6 @@ namespace NogometneIkone.DAL.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModified = table.Column<DateTime>(nullable: true),
                     Difficulty = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Time = table.Column<int>(nullable: false),
@@ -119,8 +117,7 @@ namespace NogometneIkone.DAL.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModified = table.Column<DateTime>(nullable: true),
-                    Difficulty = table.Column<int>(nullable: true),
+                    Difficulty = table.Column<int>(nullable: false),
                     Fact = table.Column<string>(nullable: true),
                     FactURL = table.Column<string>(nullable: true),
                     QuestionText = table.Column<string>(nullable: true),
@@ -233,7 +230,6 @@ namespace NogometneIkone.DAL.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AnswerText = table.Column<string>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModified = table.Column<DateTime>(nullable: true),
                     IsCorretAnswer = table.Column<bool>(nullable: false),
                     QuestionID = table.Column<int>(nullable: false)
                 },

@@ -4,10 +4,12 @@
 
 <h2>API</h2>
 
+<h3><a href="/swagger">Swagger</a></h3>
+
 <h3>Quiz API</h3>
 <ul>
     <li>
-        @Html.ActionLink("Quizzes only", $"Get", $"Quiz")
+        @Html.ActionLink("Quizzes only", "Get", $"Quiz")
     </li>
     <li>
         @Html.ActionLink("Quizz by ID", $"Get", $"Quiz", new {id = 1})
